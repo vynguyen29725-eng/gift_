@@ -981,145 +981,9 @@
       #jumpBtn, #duckBtn { min-height: 45px; font-size: 11px !important; padding-left: .45rem !important; padding-right: .45rem !important; }
       #gameReadyOverlay > div, #gameOverOverlay > div { padding: 1rem !important; }
     }
-    @media (prefers-reduced-motion: reduce) {
-      #heartLayer .floating-heart { animation-duration: .01ms !important; }
+   
     }
 
-
-
-    /* ============================================================
-       MOBILE LANDSCAPE GATE — lời nhắc xoay ngang tinh tế
-       Chỉ hiện trong mini-game trên thiết bị màn hình nhỏ đang dọc.
-       ============================================================ */
-    #orientationPrompt {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 1.25rem;
-      overflow: hidden;
-      color: #fff8f4;
-      background:
-        radial-gradient(circle at 50% 35%, rgba(210,139,165,.24), transparent 34%),
-        radial-gradient(circle at 15% 85%, rgba(223,193,138,.14), transparent 30%),
-        linear-gradient(145deg, rgba(34,22,39,.97), rgba(68,39,62,.97) 58%, rgba(43,29,47,.98));
-      backdrop-filter: blur(22px) saturate(1.2);
-      -webkit-backdrop-filter: blur(22px) saturate(1.2);
-      isolation: isolate;
-    }
-    #orientationPrompt::before,
-    #orientationPrompt::after {
-      content: '✦';
-      position: absolute;
-      z-index: -1;
-      color: rgba(244,213,190,.48);
-      font-size: 1.4rem;
-      animation: orientationTwinkle 2.8s ease-in-out infinite alternate;
-    }
-    #orientationPrompt::before { top: 13%; left: 14%; }
-    #orientationPrompt::after { right: 13%; bottom: 15%; font-size: 2rem; animation-delay: .8s; }
-    #orientationPrompt .orientation-card {
-      width: min(100%, 390px);
-      padding: clamp(1.5rem, 5vw, 2.1rem) 1.5rem 1.65rem;
-      text-align: center;
-      border: 1px solid rgba(255,239,230,.28);
-      border-radius: 30px;
-      background: linear-gradient(145deg, rgba(255,250,247,.13), rgba(255,239,239,.06));
-      box-shadow: 0 28px 90px rgba(9,4,15,.35), inset 0 1px 0 rgba(255,255,255,.17);
-    }
-    #orientationPrompt .orientation-eyebrow {
-      color: #e7c79f;
-      font: 700 .66rem/1.4 'DM Sans', sans-serif;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-    }
-    #orientationPrompt .orientation-title {
-      margin: .65rem 0 .45rem;
-      color: #fff6f2;
-      font: 600 clamp(2rem, 8vw, 2.45rem)/1.02 'Cormorant Garamond', Georgia, serif;
-      text-shadow: 0 4px 24px rgba(237,174,195,.2);
-    }
-    #orientationPrompt .orientation-copy {
-      max-width: 29ch;
-      margin: 0 auto;
-      color: rgba(255,241,236,.82);
-      font: 400 .9rem/1.7 'DM Sans', sans-serif;
-    }
-    #orientationPrompt .phone-scene {
-      position: relative;
-      width: 176px;
-      height: 126px;
-      margin: 1.1rem auto 1rem;
-      display: grid;
-      place-items: center;
-    }
-    #orientationPrompt .phone-orbit {
-      position: absolute;
-      width: 136px;
-      height: 136px;
-      border: 1px dashed rgba(236,199,179,.48);
-      border-radius: 50%;
-      animation: orbitGlow 12s linear infinite;
-    }
-    #orientationPrompt .phone-orbit::before,
-    #orientationPrompt .phone-orbit::after {
-      content: '♥';
-      position: absolute;
-      color: #e5a6b8;
-      font-size: 14px;
-      text-shadow: 0 0 14px rgba(237,165,190,.55);
-    }
-    #orientationPrompt .phone-orbit::before { top: 8px; left: 17px; }
-    #orientationPrompt .phone-orbit::after { right: 9px; bottom: 20px; font-size: 10px; }
-    #orientationPrompt .phone-device {
-      position: relative;
-      width: 43px;
-      height: 78px;
-      border: 2px solid #f8e9e3;
-      border-radius: 10px;
-      background: linear-gradient(145deg, #fffaf6, #edcbd3);
-      box-shadow: 0 0 0 5px rgba(255,244,238,.08), 0 12px 32px rgba(7,3,13,.28), 0 0 26px rgba(221,151,176,.3);
-      transform: rotate(90deg);
-      animation: phoneTurn 2.5s cubic-bezier(.45,0,.2,1) infinite;
-    }
-    #orientationPrompt .phone-device::before {
-      content: '';
-      position: absolute;
-      top: 4px;
-      left: 50%;
-      width: 12px;
-      height: 2px;
-      border-radius: 9px;
-      background: rgba(119,76,94,.42);
-      transform: translateX(-50%);
-    }
-    #orientationPrompt .phone-device::after {
-      content: '♥';
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      color: #b96f89;
-      font-size: 22px;
-      text-shadow: 0 2px 10px rgba(185,111,137,.22);
-    }
-    #orientationPrompt .orientation-sparkles {
-      margin-top: .85rem;
-      color: #dfbd91;
-      font-size: .85rem;
-      letter-spacing: .55em;
-    }
-    @keyframes phoneTurn {
-      0%, 12% { transform: rotate(0deg) scale(.94); }
-      42%, 75% { transform: rotate(90deg) scale(1.04); }
-      100% { transform: rotate(90deg) scale(.94); }
-    }
-    @keyframes orientationTwinkle {
-      from { opacity: .28; transform: scale(.8) rotate(-10deg); }
-      to { opacity: .9; transform: scale(1.18) rotate(12deg); }
-    }
     @media screen and (orientation: portrait) and (max-width: 900px) {
       body.game-is-active { overflow: hidden !important; }
       body.game-is-active #orientationPrompt { display: flex; }
@@ -1417,21 +1281,7 @@
     class="fixed top-16 left-1/2 -translate-x-1/2 z-50 hidden retro-panel px-4 py-2 text-xs sm:text-sm font-extrabold text-[#9d174d] max-w-[92vw] text-center"
   ></div>
 
-  <!-- Lời nhắc xoay ngang: chỉ hiện ở mini-game khi điện thoại đang cầm dọc -->
-  <div id="orientationPrompt" role="dialog" aria-modal="true" aria-labelledby="orientationTitle" aria-describedby="orientationCopy">
-    <div class="orientation-card">
-      <div class="orientation-eyebrow">A little note for the best view</div>
-      <div class="phone-scene" aria-hidden="true">
-        <div class="phone-orbit"></div>
-        <div class="phone-device"></div>
-      </div>
-      <h2 id="orientationTitle" class="orientation-title">Xoay ngang màn hình nhé!</h2>
-      <p id="orientationCopy" class="orientation-copy">Để chuyến phiêu lưu tràn màn hình, hãy xoay điện thoại sang chiều ngang nha.</p>
-      <button id="orientationTryBtn" type="button" class="orientation-action-btn">⛶ Thử bật toàn màn hình</button>
-      <p id="orientationStatus" class="orientation-status" aria-live="polite">Đang mở bằng Zalo? Chạm dấu ⋯ rồi chọn <b>Mở bằng trình duyệt</b> để game xoay ngang tốt hơn.</p>
-      <div class="orientation-sparkles" aria-hidden="true">✧ ♥ ✧</div>
-    </div>
-  </div>
+  
 
   <!-- Khung nội dung chính -->
   <main class="relative z-10 w-full max-w-4xl mx-auto px-3 sm:px-6 pt-16 pb-28 sm:pb-32 flex-1 flex flex-col items-center justify-center">
